@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ROIStaffDirectoryApp.Views.LoginPage"
+             BackgroundColor="White"
+             Title="Login">
+
+    <ScrollView>
+        <Grid Padding="30"
+              VerticalOptions="Center"
+              HorizontalOptions="Center">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- ROI Logo -->
+            <Image Grid.Row="0"
+                   Source="roi_logo_colored.png"
+                   HeightRequest="120"
+                   HorizontalOptions="Center"
+                   Margin="0,40,0,10"/>
+
+            <!-- Tagline -->
+            <Label Grid.Row="1"
+                   Text="RED OPAL INNOVATIONS"
+                   FontFamily="Trebuchet"
+                   FontSize="22"
+                   TextColor="Red"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,0,0,30" />
+
+            <!-- Login Form Container -->
+            <Frame Grid.Row="2"
+                   Padding="25"
+                   BackgroundColor="#f5f5f5"
+                   CornerRadius="25"
+                   HasShadow="True"
+                   WidthRequest="400"
+                   HorizontalOptions="Center">
+
+                <StackLayout Spacing="15">
+
+                    <!-- Email Field -->
+                    <Entry Placeholder="Email"
+                           Keyboard="Email"
+                           BackgroundColor="White"
+                           FontFamily="Trebuchet"
+                           HeightRequest="45"
+                           TextColor="Black" />
+
+                    <!-- Password Field -->
+                    <Entry Placeholder="Password"
+                           IsPassword="True"
+                           BackgroundColor="White"
+                           FontFamily="Trebuchet"
+                           HeightRequest="45"
+                           TextColor="Black" />
+
+                    <!-- Remember + Forgot -->
+                    <Grid ColumnSpacing="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox />
+                            <Label Text="Remember Me"
+                                   VerticalOptions="Center"
+                                   FontSize="12"
+                                   FontFamily="Trebuchet" />
+                        </StackLayout>
+
+                        <Label Grid.Column="1"
+                               Text="Forgot Password?"
+                               FontSize="12"
+                               FontFamily="Trebuchet"
+                               TextColor="Blue"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center" />
+                    </Grid>
+
+                    <!-- Login Button -->
+                    <Button Text="Login"
+                            BackgroundColor="#E53935"
+                            TextColor="White"
+                            FontFamily="Trebuchet"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            FontAttributes="Bold"
+                            Clicked="OnLoginClicked" />             
+
+
+                    <!-- Sign Up Text -->
+                    <Label HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Don’t have an account? " />
+                                <Span Text="Create an account"
+                                      TextDecorations="Underline"
+                                      TextColor="Blue">             
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding NavigateToSignUpCommand}" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+
+                </StackLayout>
+            </Frame>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

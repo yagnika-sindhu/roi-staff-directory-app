@@ -54,6 +54,7 @@
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
+		<MauiFont Include="Resources/Fonts/trebuchet-ms-2-cufonfonts/trebuchet-ms-2-cufonfonts/Trebuchet-MS.ttf" Alias="Trebuchet" />
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
@@ -62,6 +63,36 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\LoginPage.xaml.cs">
+	    <DependentUpon>LoginPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\SplashPage.xaml.cs">
+	    <DependentUpon>SplashPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Views\LoginPage.xaml.cs">
+			<DependentUpon>LoginPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\SplashPage.xaml.cs">
+			<DependentUpon>SplashPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\SignUpPage.xaml.cs">
+			<DependentUpon>SignUpPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\WelcomePage.xaml.cs">
+			<DependentUpon>WelcomePage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\StaffDirectoryPage.xaml.cs">
+			<DependentUpon>StaffDirectoryPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\StaffProfilePage.xaml.cs">
+			<DependentUpon>StaffProfilePage.xaml</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 </Project>

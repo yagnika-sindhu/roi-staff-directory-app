@@ -1,0 +1,17 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+bin/
+obj/
+
+# MAUI/Android
+*.apk
+*.keystore
+
+# Others
+*.DS_Store
+
+

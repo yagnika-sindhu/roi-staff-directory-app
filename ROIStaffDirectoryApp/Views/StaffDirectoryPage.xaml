@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:ROIStaffDirectoryApp.Views"
+             x:Class="ROIStaffDirectoryApp.Views.StaffDirectoryPage"
+             Title="Staff Directory"
+             BackgroundColor="White">
+
+    <StackLayout Padding="20">
+
+        <!-- Search Bar -->
+        <SearchBar Placeholder="Search by Name or Department"
+                   Text="{Binding SearchQuery}"
+                   TextChanged="SearchBar_TextChanged"
+                   FontFamily="Trebuchet"
+                   BackgroundColor="#f5f5f5"
+                   CancelButtonColor="Gray"/>
+
+        <!-- Staff List -->
+        <CollectionView x:Name="StaffList"
+                        SelectionMode="Single"
+                        SelectionChanged="OnStaffSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5" BackgroundColor="#f5f5f5" CornerRadius="10">
+                        <StackLayout>
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="16" />
+                            <Label Text="{Binding Department}" FontSize="13" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ROIStaffDirectoryApp.Views.StaffProfilePage"
+             Title="Staff Profile"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15" HorizontalOptions="Center">
+
+            <Label x:Name="nameLabel" FontSize="24" FontAttributes="Bold" TextColor="#EF4444" HorizontalOptions="Center" />
+
+            <Label Text="Phone" FontAttributes="Bold" />
+            <Label x:Name="phoneLabel" />
+
+            <Label Text="Email" FontAttributes="Bold" />
+            <Label x:Name="emailLabel" />
+
+            <Label Text="Department" FontAttributes="Bold" />
+            <Label x:Name="departmentLabel" />
+
+            <Label Text="Address" FontAttributes="Bold" />
+            <Label x:Name="addressLabel" />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                <Button Text="Edit" BackgroundColor="#EF4444" TextColor="White" />
+                <Button Text="Delete" BackgroundColor="#EF4444" TextColor="White" />
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
